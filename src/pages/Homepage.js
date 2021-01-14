@@ -9,11 +9,13 @@ export default function Homepage() {
     useEffect(() => {
         dispatch(requestApiData());
     }, []);
-    console.log(repositories);
 
     return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
+        <>
+            {repositories?.map((idx) => (
+                <h1 key={idx}>Home Page</h1>
+            ))}
+            {repositories.length === 0 && <div>Loadinggggggg</div>}
+        </>
     );
 }

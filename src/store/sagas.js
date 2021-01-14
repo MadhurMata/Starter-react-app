@@ -7,6 +7,7 @@ import { fetchData } from 'services/service';
 function* getRepositories() {
     try {
         const data = yield call(fetchData);
+        console.log(data);
         yield put(receiveApiData(data));
     } catch (e) {
         console.log(e);
