@@ -15,13 +15,16 @@ module.exports = {
     env: {
         browser: true, // Enables browser globals like window and document
         amd: true, // Enables require() and define() as global variables as per the amd spec.
-        node: true // Enables Node.js global variables and Node.js scoping.
+        node: true, // Enables Node.js global variables and Node.js scoping.
+        es6: true
     },
+    plugins: ['jest'],
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:jsx-a11y/recommended',
-        'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
+        'plugin:prettier/recommended', // Make this the last element so prettier config overrides other formatting rules
+        'plugin:jest/recommended'
     ],
     rules: {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }] // Use our .prettierrc file as source

@@ -2,7 +2,7 @@ import { RECEIVE_API_DATA, REQUEST_API_DATA_FAILED } from 'store/actions/types';
 
 const initialState = {
     repositories: [],
-    error: ""
+    error: ''
 };
 
 export default (state = initialState, { type, data }) => {

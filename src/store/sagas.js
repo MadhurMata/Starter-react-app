@@ -9,7 +9,7 @@ export function* getRepositories() {
         const data = yield call(fetchData);
         yield put(receiveApiData(data));
     } catch (e) {
-      yield put(saveError());
+        yield put(saveError());
     }
 }
 

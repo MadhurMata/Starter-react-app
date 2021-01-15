@@ -18,34 +18,39 @@ describe('fetching data flow', () => {
     });
 });
 
-
 describe('saga flow', () => {
+    it('should call api and dispatch success action', async () => {
+        const response = { repositoty: 'test' };
+        const requestRepositories = jest
+            .spyOn(service, 'fetchData')
+            .mockImplementation(() => Promise.resolve(response));
+        const dispatched = [];
+        await runSaga(
+            {
+                dispatch: (action) => dispatched.push(action)
+            },
+            getRepositories
+        );
 
-  it('should call api and dispatch success action', async ()  => {
-    const response = { repositoty: "test" };
-    const requestRepositories = jest.spyOn(service, 'fetchData').mockImplementation(() => Promise.resolve(response));
-    const dispatched = [];
-    const result = await runSaga({
+        expect(requestRepositories).toHaveBeenCalledTimes(1);
+        expect(dispatched).toEqual([receiveApiData(response)]);
+        requestRepositories.mockClear();
+    });
 
-      dispatch: (action) => dispatched.push(action)
-    }, getRepositories);
+    it('should call api and dispatch error action', async () => {
+        const requestRepositories = jest
+            .spyOn(service, 'fetchData')
+            .mockImplementation(() => Promise.reject());
+        const dispatched = [];
+        await runSaga(
+            {
+                dispatch: (action) => dispatched.push(action)
+            },
+            getRepositories
+        );
 
-    expect(requestRepositories).toHaveBeenCalledTimes(1);
-    expect(dispatched).toEqual([receiveApiData(response)]);
-    requestRepositories.mockClear();
-  });
-
-  it('should call api and dispatch error action', async ()  => {
-    const response = { repositoty: "test" };
-    const requestRepositories = jest.spyOn(service, 'fetchData').mockImplementation(() => Promise.reject());
-    const dispatched = [];
-    const result = await runSaga({
-
-      dispatch: (action) => dispatched.push(action)
-    }, getRepositories);
-
-    expect(requestRepositories).toHaveBeenCalledTimes(1);
-    expect(dispatched).toEqual([saveError()]);
-    requestRepositories.mockClear();
-  });
+        expect(requestRepositories).toHaveBeenCalledTimes(1);
+        expect(dispatched).toEqual([saveError()]);
+        requestRepositories.mockClear();
+    });
 });
