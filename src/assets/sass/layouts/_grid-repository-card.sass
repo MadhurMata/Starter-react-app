@@ -1,0 +1,38 @@
+.grid-container
+  display: grid;
+  max-width: 80vw;
+  margin: 1rem 0;
+  grid-template-columns: 0fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 20px;
+  grid-template-areas: 'photo-grid-container repository-info';
+
+.repository-info
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 'title-grid-container' 'definition-grid-container' 'details-grid-container';
+  grid-area: 'repository-info';
+
+.photo-grid-container
+  place-self: center;
+  grid-area: photo-grid-container;
+
+.title-grid-container
+  justify-self: start;
+  align-self: center;
+  grid-area: title-grid-container;
+
+.definition-grid-container
+  justify-self: start;
+  align-self: center;
+  grid-area: definition-grid-container;
+
+.details-grid-container
+  justify-self: start;
+  align-self: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-area: details-grid-container;
+  
