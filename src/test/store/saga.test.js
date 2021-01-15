@@ -1,19 +1,14 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 
-import { REQUEST_API_DATA, RECEIVE_API_DATA, REQUEST_API_DATA_FAILED } from 'store/actions/types';
+import { REQUEST_API_DATA } from 'store/actions/types';
 import * as service from 'services/gitHubService';
 import mySaga, { getRepositories } from 'store/sagas';
 import { receiveApiData, saveError } from 'store/actions/actions';
 
 describe('fetching data flow', () => {
     const generator = mySaga();
-    // const error = {}
-    // const response = { data: { results: 'whatever' }}
 
-    // it('Makes api request', () => {
-    //     expect(generator.next().value).toEqual(call(fetchData));
-    // });
     it('bfndkmws', () => {
         expect(generator.next().value).toEqual(takeLatest(REQUEST_API_DATA, getRepositories));
     });
@@ -21,18 +16,6 @@ describe('fetching data flow', () => {
     it('should be done with next iteration', () => {
         expect(generator.next().done).toBeTruthy();
     });
-
-  //   it('Makes api request', () => {
-  //     expect(generator.next(response).value).toEqual(takeLatest(RECEIVE_API_DATA, {}));
-  // });
-
-    // it('Fetches makes api request', () => {
-    //     expect(generator.next()).toEqual({ done: true, value: undefined });
-    // });
-
-    // it('Api request fail ', () => {
-    //     expect(generator.throw(error).value).toEqual(put(REQUEST_API_DATA_FAILED))
-    // });
 });
 
 
@@ -65,6 +48,4 @@ describe('saga flow', () => {
     expect(dispatched).toEqual([saveError()]);
     requestRepositories.mockClear();
   });
-
-
 });
