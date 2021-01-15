@@ -1,16 +1,15 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 
 import { REQUEST_API_DATA } from 'store/actions/types';
-import { receiveApiData } from 'store/actions/actions';
-import { fetchData } from 'services/service';
+import { receiveApiData, saveError } from 'store/actions/actions';
+import { fetchData } from 'services/gitHubService';
 
-function* getRepositories() {
+export function* getRepositories() {
     try {
         const data = yield call(fetchData);
-        console.log(data);
         yield put(receiveApiData(data));
     } catch (e) {
-        console.log(e);
+      yield put(saveError());
     }
 }
 

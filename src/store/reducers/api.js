@@ -1,7 +1,8 @@
-import { RECEIVE_API_DATA } from 'store/actions/types';
+import { RECEIVE_API_DATA, REQUEST_API_DATA_FAILED } from 'store/actions/types';
 
 const initialState = {
-    repositories: []
+    repositories: [],
+    error: ""
 };
 
 export default (state = initialState, { type, data }) => {
@@ -10,6 +11,11 @@ export default (state = initialState, { type, data }) => {
             return {
                 ...state,
                 repositories: data
+            };
+        case REQUEST_API_DATA_FAILED:
+            return {
+                ...state,
+                fechFailed: 'fetchError'
             };
         default:
             return state;

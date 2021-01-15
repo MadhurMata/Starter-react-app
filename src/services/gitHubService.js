@@ -6,6 +6,6 @@ export const fetchData = async () => {
         const data = await response.json();
         return data.items;
     } catch (e) {
-        console.log(e);
+        console.log("The repositories couldn't be loaded", e);
     }
 };
