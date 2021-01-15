@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
 import Homepage from 'pages/Homepage';
+import 'assets/sass/styles.sass';
 
 function App() {
     return (
-        <div className="App">
+        <div className="app-wrapper">
             <Homepage />
         </div>
     );
