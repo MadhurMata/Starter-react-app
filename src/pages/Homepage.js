@@ -14,7 +14,7 @@ export default function Homepage() {
     }, []);
 
     return (
-        <div>
+        <main>
             {repositories?.map((repository, idx) => (
                 <RepositoryCard
                     repositoryName={repository.name}
@@ -28,6 +28,6 @@ export default function Homepage() {
                 />
             ))}
             {repositories.length === 0 && <div className="spinner">Loadinggggggg</div>}
-        </div>
+        </main>
     );
 }
