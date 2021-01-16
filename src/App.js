@@ -1,8 +1,8 @@
 import React from 'react';
 import Homepage from 'pages/Homepage';
 import 'assets/sass/styles.sass';
-import Header from 'components/header/Header';
-import Footer from 'components/footer/Footer';
+import Header from 'parts/header/Header';
+import Footer from 'parts/footer/Footer';
 
 function App() {
     return (

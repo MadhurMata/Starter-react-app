@@ -17,9 +17,11 @@ export default function Homepage() {
     }, []);
 
     const filterRepositories = () => {
-        return repositories?.filter((repository) =>
-            repository.name.toLowerCase().includes(searchValue)
-        );
+        return searchValue
+            ? repositories?.filter((repository) =>
+                  repository.name.toLowerCase().includes(searchValue)
+              )
+            : repositories;
     };
     return (
         <main>
