@@ -6,10 +6,10 @@ import * as service from 'services/gitHubService';
 import mySaga, { getRepositories } from 'store/sagas';
 import { receiveApiData, saveError } from 'store/actions/actions';
 
-describe('fetching data flow', () => {
+describe('Fetch repositories from GitHub API', () => {
     const generator = mySaga();
 
-    it('bfndkmws', () => {
+    it('Should return the las action and call getRepositories', () => {
         expect(generator.next().value).toEqual(takeLatest(REQUEST_API_DATA, getRepositories));
     });
 

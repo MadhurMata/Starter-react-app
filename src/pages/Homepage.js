@@ -4,18 +4,26 @@ import { requestApiData } from 'store/actions/actions';
 import 'assets/sass/styles.sass';
 import RepositoryCard from 'components/repository/RepositoryCard';
 import { daysFromCreatedDate } from 'utils/utils';
+import moment from 'moment';
 
 export default function Homepage() {
     const dispatch = useDispatch();
     const repositories = useSelector((state) => state.repositories);
+    const searchValue = useSelector((state) => state.search.value);
+    const todaysDate = moment(new Date());
 
     useEffect(() => {
         dispatch(requestApiData());
     }, []);
 
+    const filterRepositories = () => {
+        return repositories?.filter((repository) =>
+            repository.name.toLowerCase().includes(searchValue)
+        );
+    };
     return (
         <main>
-            {repositories?.map((repository, idx) => (
+            {filterRepositories()?.map((repository, idx) => (
                 <RepositoryCard
                     repositoryName={repository.name}
                     repositoryDescription={repository.description}
@@ -23,7 +31,7 @@ export default function Homepage() {
                     repositoryStars={repository.stargazers_count}
                     repositoryUserName={repository.owner.login}
                     repositoryAvatar={repository.owner.avatar_url}
-                    createdAt={daysFromCreatedDate(repository.created_at)}
+                    createdAt={daysFromCreatedDate(repository.created_at, todaysDate)}
                     key={idx}
                 />
             ))}
