@@ -10,11 +10,12 @@ export default function Homepage() {
     const dispatch = useDispatch();
     const repositories = useSelector((state) => state.repositories);
     const searchValue = useSelector((state) => state.search.value);
+    const currentPageNumber = useSelector((state) => state.pageNumber);
     const todaysDate = moment(new Date());
 
     useEffect(() => {
-        dispatch(requestApiData());
-    }, []);
+        dispatch(requestApiData(currentPageNumber));
+    }, [currentPageNumber]);
 
     const filterRepositories = () => {
         return searchValue
@@ -37,7 +38,7 @@ export default function Homepage() {
                     key={idx}
                 />
             ))}
-            {repositories.length === 0 && <div className="spinner">Loadinggggggg</div>}
+            {repositories?.length === 0 && <div className="spinner">Loadinggggggg</div>}
         </main>
     );
 }

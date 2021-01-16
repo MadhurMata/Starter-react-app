@@ -1,10 +1,9 @@
-export const fetchData = async () => {
+export const fetchData = async (pageNumber) => {
     try {
         const response = await fetch(
-            `https://api.github.com/search/repositories?q=per_page=20&page=${'1'}`
+            `https://api.github.com/search/repositories?q=page=${pageNumber}&per_page=5`
         );
         const data = await response.json();
-        console.log('service', data);
         return data.items;
     } catch (e) {
         console.log("The repositories couldn't be loaded", e);

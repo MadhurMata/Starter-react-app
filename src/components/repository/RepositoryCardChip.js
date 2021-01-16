@@ -12,6 +12,6 @@ export default function RepositoryCardChip(props) {
 
 RepositoryCardChip.propTypes = {
     classProp: PropTypes.string,
-    quantity: PropTypes.string,
+    quantity: PropTypes.number,
     text: PropTypes.string
 };

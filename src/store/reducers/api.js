@@ -1,9 +1,15 @@
-import { RECEIVE_API_DATA, REQUEST_API_DATA_FAILED, SAVE_SEARCH } from 'store/actions/types';
+import {
+    RECEIVE_API_DATA,
+    REQUEST_API_DATA_FAILED,
+    SAVE_SEARCH,
+    RECEIVE_PAGE_NUMBER
+} from 'store/actions/types';
 
 const initialState = {
     repositories: [],
     error: '',
-    search: ''
+    search: '',
+    pageNumber: 1
 };
 
 export default (state = initialState, { type, data }) => {
@@ -22,6 +28,11 @@ export default (state = initialState, { type, data }) => {
             return {
                 ...state,
                 search: data
+            };
+        case RECEIVE_PAGE_NUMBER:
+            return {
+                ...state,
+                pageNumber: data.page
             };
         default:
             return state;
