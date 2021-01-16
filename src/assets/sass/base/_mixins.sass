@@ -13,3 +13,25 @@
     p 
       inline-size: max-content;
       font-size: 0.8rem;
+
+
+@mixin button($background,$text-color,$font-size)
+  text-decoration: none;display:inline-block;
+  background: $background;
+  color: $text-color; 
+  text-shadow: 0 2px 1px rgba(0,0,0,.35); 
+  font-size: $font-size;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding: 0 1em; line-height:2.5;
+  box-shadow: 0 3em 0 transparent inset;
+  border-radius: 10px;
+  transition: all .5s ease;
+    
+  &:hover 
+    box-shadow: 0 3em 0 rgba(0,0,0,.3) inset;
+  
+  &:active 
+    box-shadow: 0 3em 0 rgba(0,0,0,.6) inset;
+  
