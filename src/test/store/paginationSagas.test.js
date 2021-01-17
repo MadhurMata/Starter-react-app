@@ -1,9 +1,9 @@
 import { takeLatest } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 
-import { REQUEST_API_DATA_FAILED, REQUEST_PAGE_NUMBER } from 'store/actions/types';
+import { REQUEST_PAGE_NUMBER } from 'store/actions/types';
 import paginationSaga, { changePageNumber } from 'store/sagas/pagination';
-import { receivePageNumber, saveError } from 'store/actions/actions';
+import { receivePageNumber } from 'store/actions/actions';
 
 describe('Change page number', () => {
     const generator = paginationSaga();
@@ -31,4 +31,4 @@ describe('saga flow', () => {
 
         expect(dispatched).toEqual([receivePageNumber(response)]);
     });
- });
+});

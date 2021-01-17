@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import { requestPageNumber } from 'store/actions/actions';
 
 export default function Button(props) {
+    const { classProp, buttonText } = props;
     const dispatch = useDispatch();
     const currentPageNumber = useSelector((state) => state.pageNumber);
+
     const handleClick = (e) => {
         if (e.keyCode == 13 || e.type === 'click') {
             switch (true) {
@@ -24,15 +26,16 @@ export default function Button(props) {
     return (
         <div
             role="button"
-            className="button"
+            className={classProp}
             tabIndex={0}
             onClick={handleClick}
             onKeyDown={handleClick}>
-            <h2>{props.buttonText}</h2>
+            <h2>{buttonText}</h2>
         </div>
     );
 }
 
 Button.propTypes = {
-    buttonText: PropTypes.string
+    buttonText: PropTypes.string,
+    classProp: PropTypes.string
 };

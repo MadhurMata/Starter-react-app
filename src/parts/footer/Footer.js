@@ -7,9 +7,11 @@ export default function Footer() {
 
     return (
         <footer className="footer-container">
-            <Button buttonText={'Previous'} />
-            <div>{currentPageNumber}</div>
-            <Button buttonText={'Next'} />
+            <Button buttonText={'Previous'} classProp={'previous-button'} />
+            <div className="page-indicator">
+                <h1>{currentPageNumber}</h1>
+            </div>
+            <Button buttonText={'Next'} classProp={'next-button'} />
         </footer>
     );
 }

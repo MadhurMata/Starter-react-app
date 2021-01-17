@@ -1,43 +1,43 @@
 .grid-container
-  display: grid;
-  max-width: 80vw;
-  margin: 1rem 0;
-  grid-template-columns: 0fr 1fr;
-  grid-template-rows: 1fr;
-  border: 2px solid #986c6c;
-  border-radius: 10px;
-  gap: 0px 20px;
-  grid-template-areas: 'photo-grid-container repository-info';
+  display: grid
+  max-width: 80vw
+  margin: 1rem 0
+  grid-template-columns: 0fr 1fr
+  grid-template-rows: 1fr
+  border: 2px solid #986c6c
+  border-radius: 10px
+  gap: 0px 20px
+  grid-template-areas: 'photo-grid-container repository-info'
 
   @media (max-width: $smallDevicesSize) 
-    min-width: 90vw;
-    gap: 0px 5px;
+    min-width: 90vw
+    gap: 0px 5px
 
 .repository-info
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas: 'title-grid-container' 'definition-grid-container' 'details-grid-container';
-  grid-area: 'repository-info';
+  display: grid
+  grid-template-columns: 100%
+  grid-template-rows: 1fr 1fr 1fr
+  gap: 0px 0px
+  grid-template-areas: 'title-grid-container' 'definition-grid-container' 'details-grid-container'
+  grid-area: 'repository-info'
 
 .photo-grid-container
-  place-self: center;
-  grid-area: photo-grid-container;
+  place-self: center
+  grid-area: photo-grid-container
 
 .title-grid-container
-  grid-area: title-grid-container;
+  grid-area: title-grid-container
   @extend %grid-area-shared
 
 .definition-grid-container
-  grid-area: definition-grid-container;
+  grid-area: definition-grid-container
   @extend %grid-area-shared
 
  
 
 .details-grid-container
-  display: grid;
-  grid-auto-flow: column;
-  grid-area: details-grid-container;
+  display: grid
+  grid-auto-flow: column
+  grid-area: details-grid-container
   @extend %grid-area-shared
   
