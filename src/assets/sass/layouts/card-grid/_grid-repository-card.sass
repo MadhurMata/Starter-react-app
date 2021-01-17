@@ -4,8 +4,14 @@
   margin: 1rem 0;
   grid-template-columns: 0fr 1fr;
   grid-template-rows: 1fr;
+  border: 2px solid #986c6c;
+  border-radius: 10px;
   gap: 0px 20px;
   grid-template-areas: 'photo-grid-container repository-info';
+
+  @media (max-width: $smallDevicesSize) 
+    min-width: 90vw;
+    gap: 0px 5px;
 
 .repository-info
   display: grid;
@@ -20,19 +26,18 @@
   grid-area: photo-grid-container;
 
 .title-grid-container
-  justify-self: start;
-  align-self: center;
   grid-area: title-grid-container;
+  @extend %grid-area-shared
 
 .definition-grid-container
-  justify-self: start;
-  align-self: center;
   grid-area: definition-grid-container;
+  @extend %grid-area-shared
+
+ 
 
 .details-grid-container
-  justify-self: start;
-  align-self: center;
   display: grid;
   grid-auto-flow: column;
   grid-area: details-grid-container;
+  @extend %grid-area-shared
   

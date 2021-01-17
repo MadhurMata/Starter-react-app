@@ -8,6 +8,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
     border: 0
     font-size: 100%
     font: inherit
+    font-family: $roboto
     vertical-align: baseline
     text-rendering: optimizeLegibility
     -webkit-font-smoothing: antialiased
@@ -37,3 +38,17 @@ table
 input
     -webkit-appearance: none
     border-radius: 0
+
+h1
+  font-weight: $semibold
+  font-size: $fontSizeOtherDevice
+  @media (max-width: $smallDevicesSize)
+    font-size: $fontSizeSmallDevice
+
+h2, p 
+  font-weight: $normal
+  font-size: $fontSizeOtherDevice
+  @media (max-width: $smallDevicesSize)
+    font-size: $fontSizeSmallDevice
+
+    

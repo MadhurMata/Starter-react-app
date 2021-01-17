@@ -19,11 +19,11 @@ export default function RepositoryCard(props) {
                 <img className="repository-avatar" src={repositoryAvatar} alt="Avatar" />
             </div>
             <div className="repository-info">
-                <div className="title-grid-container">
+                <div className="title-grid-container truncate-60vw">
                     <h1>{repositoryName}</h1>
                 </div>
                 <div className="definition-grid-container">
-                    <p>{repositoryDescription}</p>
+                    <p className="truncate-60vw">{repositoryDescription}</p>
                 </div>
                 <div className="details-grid-container">
                     <RepositoryCardChip
@@ -37,7 +37,9 @@ export default function RepositoryCard(props) {
                         text={'Issues: '}
                     />
                     <div>
-                        Submited {createdAt} days ago by {repositoryUserName}
+                        <p className="hide truncate-20vw">
+                            Submited {createdAt} days ago by {repositoryUserName}
+                        </p>
                     </div>
                     {/* <div>
               {'9'} days ago by {'repositoryUserName'}

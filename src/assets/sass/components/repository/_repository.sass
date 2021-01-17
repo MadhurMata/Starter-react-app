@@ -1,0 +1,13 @@
+//Truncate text for different size  devices
+
+.truncate-60vw
+  @include truncateText(60vw)
+
+.truncate-20vw
+  @include truncateText(20vw)
+
+// Don't display HTML tag
+.hide
+  @media (max-width: $smallDevicesSize)
+    display: none;
+    

@@ -29,7 +29,7 @@ export default function Button(props) {
             tabIndex={0}
             onClick={handleClick}
             onKeyDown={handleClick}>
-            <h3>{props.buttonText}</h3>
+            <h2>{props.buttonText}</h2>
         </div>
     );
 }
