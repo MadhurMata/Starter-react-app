@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setSearchValue } from 'store/actions/actions';
+import { requestSearchValue } from 'store/actions/actions';
 
 export default function Searchbar() {
     const [search, setSearch] = useState('');
     const dispatch = useDispatch();
 
     useEffect(() => {
-        search ? dispatch(setSearchValue(search)) : null;
+        console.log('search times');
+        search.length > 0 ? dispatch(requestSearchValue(search.toLowerCase())) : null;
     }, [search]);
 
     const handleSubmit = (e) => {

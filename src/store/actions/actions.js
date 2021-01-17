@@ -16,8 +16,8 @@ export const receiveApiData = (data) => ({
 
 export const saveError = () => ({ type: REQUEST_API_DATA_FAILED });
 
-export const setSearchValue = (value) => ({ type: SEARCH, value });
-export const saveSearch = (data) => ({ type: SAVE_SEARCH, data });
+export const requestSearchValue = (value) => ({ type: SEARCH, value });
+export const receiveSearchValue = (data) => ({ type: SAVE_SEARCH, data });
 
 export const requestPageNumber = (page) => ({ type: REQUEST_PAGE_NUMBER, page });
 export const receivePageNumber = (data) => ({ type: RECEIVE_PAGE_NUMBER, data });

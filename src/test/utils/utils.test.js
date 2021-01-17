@@ -9,21 +9,20 @@ describe('Test utils methods', () => {
     });
 
     it('Should return a number as a string when it is < 1000', () => {
-      const givenNumber = 300;
+        const givenNumber = 300;
 
-      expect(numFormatter(givenNumber)).toEqual('300');
-  });
+        expect(numFormatter(givenNumber)).toEqual('300');
+    });
 
-  it('Should return a number + K (1k) as a string when it is >= 1000', () => {
-    const givenNumber = 1000;
+    it('Should return a number + K (1k) as a string when it is >= 1000', () => {
+        const givenNumber = 1000;
 
-    expect(numFormatter(givenNumber)).toEqual('1k');
-});
+        expect(numFormatter(givenNumber)).toEqual('1k');
+    });
 
-it('Should return a number with decimal + K (1k) as a string when it is >= 1000 & has hundreds defined (5600)', () => {
-  const givenNumber = 5600;
+    it('Should return a number with decimal + K (1k) as a string when it is >= 1000 & has hundreds defined (5600)', () => {
+        const givenNumber = 5600;
 
-  expect(numFormatter(givenNumber)).toEqual('5.6k');
-});
-
+        expect(numFormatter(givenNumber)).toEqual('5.6k');
+    });
 });

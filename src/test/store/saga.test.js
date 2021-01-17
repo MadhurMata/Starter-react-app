@@ -3,11 +3,11 @@ import { runSaga } from 'redux-saga';
 
 import { REQUEST_API_DATA } from 'store/actions/types';
 import * as service from 'services/gitHubService';
-import mySaga, { getRepositories } from 'store/sagas';
+import { repositoriesSaga, getRepositories } from 'store/sagas/repositories';
 import { receiveApiData, saveError } from 'store/actions/actions';
 
 describe('Fetch repositories from GitHub API', () => {
-    const generator = mySaga();
+    const generator = repositoriesSaga();
 
     it('Should return the las action and call getRepositories', () => {
         expect(generator.next().value).toEqual(takeLatest(REQUEST_API_DATA, getRepositories));
@@ -29,7 +29,8 @@ describe('saga flow', () => {
             {
                 dispatch: (action) => dispatched.push(action)
             },
-            getRepositories
+            getRepositories,
+            { page: 1 }
         );
 
         expect(requestRepositories).toHaveBeenCalledTimes(1);
@@ -46,7 +47,8 @@ describe('saga flow', () => {
             {
                 dispatch: (action) => dispatched.push(action)
             },
-            getRepositories
+            getRepositories,
+            { page: 1 }
         );
 
         expect(requestRepositories).toHaveBeenCalledTimes(1);
