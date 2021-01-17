@@ -3,7 +3,7 @@ import { runSaga } from 'redux-saga';
 
 import { REQUEST_API_DATA } from 'store/actions/types';
 import * as service from 'services/gitHubService';
-import { repositoriesSaga, getRepositories } from 'store/sagas/repositories';
+import repositoriesSaga, { getRepositories } from 'store/sagas/repositories';
 import { receiveApiData, saveError } from 'store/actions/actions';
 
 describe('Fetch repositories from GitHub API', () => {

@@ -7,7 +7,6 @@ export default function Searchbar() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('search times');
         search.length > 0 ? dispatch(requestSearchValue(search.toLowerCase())) : null;
     }, [search]);
 

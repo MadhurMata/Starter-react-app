@@ -15,7 +15,6 @@ const initialState = {
 export default (state = initialState, { type, data }) => {
     switch (type) {
         case RECEIVE_API_DATA:
-            console.log('repositories reducers', data);
             return {
                 ...state,
                 repositories: data
@@ -26,13 +25,11 @@ export default (state = initialState, { type, data }) => {
                 fechFailed: 'fetchError'
             };
         case SAVE_SEARCH:
-            console.log('reducers in search', data);
             return {
                 ...state,
                 search: data
             };
         case RECEIVE_PAGE_NUMBER:
-            console.log('reducers pagination', data);
             return {
                 ...state,
                 pageNumber: data.page
