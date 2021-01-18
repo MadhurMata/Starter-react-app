@@ -1,7 +1,7 @@
 # Starter-react-app
 
 ## Description
-Starter-app for react applications. The project is created in multiple branches with different features implemented. Project in development and improvement as it has ben used to learn new technilogies.
+Starter-app for react applications. The project is created in multiple branches with different features implemented. Project in development and improvement as it has been used to learn new technologies.
 
 ## Branch description
 
@@ -28,4 +28,4 @@ You will also see any lint errors in the console.
 
 - error handling
 - card view
-- login
+- login (auth/aut)
