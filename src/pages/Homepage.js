@@ -1,12 +1,12 @@
+import 'assets/sass/styles.sass';
+import RepositoryCard from 'components/repository/RepositoryCard';
+import moment from 'moment';
+import Footer from 'parts/footer/Footer';
+import Header from 'parts/header/Header';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { requestApiData } from 'store/actions/actions';
-import 'assets/sass/styles.sass';
-import RepositoryCard from 'components/repository/RepositoryCard';
-import Header from 'parts/header/Header';
-import Footer from 'parts/footer/Footer';
 import { daysFromCreatedDate } from 'utils/utils';
-import moment from 'moment';
 
 export default function Homepage() {
     const dispatch = useDispatch();

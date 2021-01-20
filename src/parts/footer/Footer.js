@@ -1,4 +1,4 @@
-import Button from 'components/button/Button';
+import Button from 'components/buttons/Button';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
