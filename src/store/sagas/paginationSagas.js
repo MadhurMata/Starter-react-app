@@ -1,13 +1,15 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
 import { REQUEST_PAGE_NUMBER } from 'store/actions/types';
-import { receivePageNumber, saveError } from 'store/actions/actions';
+import { receivePageNumber } from 'store/actions/paginationActions';
 
 export function* changePageNumber(pageNumber) {
     try {
         yield put(receivePageNumber(pageNumber));
     } catch (e) {
-        yield put(saveError());
+        console.log('Page could not be load', e);
+        // TODO: handle errors
+        // yield put(saveError());
     }
 }
 

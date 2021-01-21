@@ -1,15 +1,15 @@
-import { RECEIVE_LOGIN } from 'store/actions/types';
+import { RECEIVE_API_DATA } from 'store/actions/types';
 
 const initialState = {
-    user: null
+    repositories: []
 };
 
 export default (state = initialState, { type, data }) => {
     switch (type) {
-        case RECEIVE_LOGIN:
+        case RECEIVE_API_DATA:
             return {
                 ...state,
-                user: data.user
+                repositories: data
             };
         default:
             return state;

@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export default function Footer() {
-    const currentPageNumber = useSelector((state) => state.pageNumber);
+    const currentPageNumber = useSelector((state) => state.paginationStore.pageNumber);
 
     return (
         <footer className="footer-container">

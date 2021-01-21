@@ -30,6 +30,5 @@ export default function NestedInput(props) {
 NestedInput.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
-    defaultValue: PropTypes.string,
-    disabled: PropTypes.string
+    defaultValue: PropTypes.string
 };

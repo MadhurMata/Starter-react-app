@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { requestPageNumber } from 'store/actions/actions';
+import { requestPageNumber } from 'store/actions/paginationActions';
 
 export default function Button(props) {
     const { classProp, buttonText } = props;
     const dispatch = useDispatch();
-    const currentPageNumber = useSelector((state) => state.pageNumber);
+    const currentPageNumber = useSelector((state) => state.paginationStore.pageNumber);
 
     const handleClick = (e) => {
         if (e.keyCode == 13 || e.type === 'click') {

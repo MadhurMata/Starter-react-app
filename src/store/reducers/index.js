@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import authReducer from 'store/reducers/authReducer';
-import service from 'store/reducers/reducers';
+import authStore from 'store/reducers/authReducers';
+import repositoriesStore from 'store/reducers/repositoriesReducers';
+import searchStore from 'store/reducers/searchReducers';
+import paginationStore from 'store/reducers/paginationReducers';
 
 export default combineReducers({
-    service,
-    authReducer
+    authStore,
+    repositoriesStore,
+    searchStore,
+    paginationStore
 });

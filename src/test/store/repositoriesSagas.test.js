@@ -3,8 +3,8 @@ import { runSaga } from 'redux-saga';
 
 import { REQUEST_API_DATA } from 'store/actions/types';
 import * as service from 'services/gitHubService';
-import repositoriesSaga, { getRepositories } from 'store/sagas/repositories';
-import { receiveApiData, saveError } from 'store/actions/actions';
+import repositoriesSaga, { getRepositories } from 'store/sagas/repositoriesSagas';
+import { receiveApiData, saveError } from 'store/actions/repositoriesActions';
 
 describe('Fetch repositories from GitHub API', () => {
     const generator = repositoriesSaga();

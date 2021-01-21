@@ -2,8 +2,8 @@ import { takeEvery } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 
 import { SEARCH } from 'store/actions/types';
-import searchSaga, { searchRepository } from 'store/sagas/search';
-import { receiveSearchValue } from 'store/actions/actions';
+import searchSaga, { searchRepository } from 'store/sagas/searchSagas';
+import { receiveSearchValue } from 'store/actions/searchActions';
 
 describe('Save search value in store', () => {
     const generator = searchSaga();

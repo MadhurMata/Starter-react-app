@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { requestSearchValue } from 'store/actions/actions';
+import { requestSearchValue } from 'store/actions/searchActions';
 
 export default function Searchbar() {
     const [search, setSearch] = useState('');

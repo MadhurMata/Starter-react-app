@@ -1,6 +1,5 @@
 export const REQUEST_API_DATA = 'REQUEST_API_DATA';
 export const RECEIVE_API_DATA = 'RECEIVE_API_DATA';
-export const REQUEST_API_DATA_FAILED = 'REQUEST_API_DATA_FAILED';
 
 export const SEARCH = 'SEARCH';
 export const SAVE_SEARCH = 'SAVE_SEARCH';

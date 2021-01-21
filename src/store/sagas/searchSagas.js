@@ -1,13 +1,15 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
 import { SEARCH } from 'store/actions/types';
-import { saveError, receiveSearchValue } from 'store/actions/actions';
+import { receiveSearchValue } from 'store/actions/searchActions';
 
 export function* searchRepository(searchValue) {
     try {
         yield put(receiveSearchValue(searchValue));
     } catch (e) {
-        yield put(saveError());
+        console.log('Serch could not be done', e);
+        // TODO: handle errors
+        // yield put(saveError());
     }
 }
 

@@ -2,8 +2,8 @@ import { takeLatest } from 'redux-saga/effects';
 import { runSaga } from 'redux-saga';
 
 import { REQUEST_PAGE_NUMBER } from 'store/actions/types';
-import paginationSaga, { changePageNumber } from 'store/sagas/pagination';
-import { receivePageNumber } from 'store/actions/actions';
+import paginationSaga, { changePageNumber } from 'store/sagas/paginationSagas';
+import { receivePageNumber } from 'store/actions/paginationActions';
 
 describe('Change page number', () => {
     const generator = paginationSaga();

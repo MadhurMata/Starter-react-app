@@ -5,14 +5,15 @@ import Footer from 'parts/footer/Footer';
 import Header from 'parts/header/Header';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { requestApiData } from 'store/actions/actions';
+import { requestApiData } from 'store/actions/repositoriesActions';
 import { daysFromCreatedDate } from 'utils/utils';
+import { withRouter } from 'react-router-dom';
 
-export default function Homepage() {
+function Homepage() {
     const dispatch = useDispatch();
-    const repositories = useSelector((state) => state.repositories);
-    const searchValue = useSelector((state) => state.search.value);
-    const currentPageNumber = useSelector((state) => state.pageNumber);
+    const repositories = useSelector((state) => state.repositoriesStore.repositories);
+    const searchValue = useSelector((state) => state.searchStore.search.value);
+    const currentPageNumber = useSelector((state) => state.paginationStore.pageNumber);
     const todaysDate = moment(new Date());
 
     useEffect(() => {
@@ -48,3 +49,5 @@ export default function Homepage() {
         </>
     );
 }
+
+export default withRouter(Homepage);
